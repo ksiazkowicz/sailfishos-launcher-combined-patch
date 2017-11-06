@@ -492,6 +492,15 @@ index 2360cb0..a7237b5 100644
              }
          }
      }
+@@ -342,7 +342,7 @@ SilicaGridView {
+             elide: Text.ElideRight
+
+             color: down ? Theme.highlightColor : "#FFFFFF"
+-            font.pixelSize: Theme.fontSizeTiny
++            font.pixelSize: Theme.fontSizeTiny * (launcherGridSettings.zoomFonts ? launcherGridSettings.zoomValue : 1.0)
+             text: object.title.replace(/\n|\r/g, " ")
+             textFormat: Text.PlainText
+             visible: !launcherEditMode || isFolder
 diff --git a/launcher/LauncherView.qml b/launcher/LauncherView.qml
 index 44e2122..9e3377a 100644
 --- a/usr/share/lipstick-jolla-home-qt5/launcher/LauncherView.qml
